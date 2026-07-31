@@ -104,7 +104,7 @@
             border: 1px solid rgba(255, 255, 255, 0.12);
             border-radius: 100px;
             width: 92%;
-            max-width: 1000px;
+            max-width: 1100px;
             transition: var(--transition-smooth);
             box-shadow: 0 20px 60px rgba(0, 0, 0, 0.6);
         }
@@ -116,7 +116,7 @@
         }
 
         .nav-logo {
-            font-size: 2rem;
+            font-size: 1.8rem;
             font-weight: 900;
             letter-spacing: 4px;
             background: linear-gradient(45deg, #ff2d55, #ff6b8a, #ff2d55);
@@ -137,7 +137,7 @@
 
         .nav-links {
             display: flex;
-            gap: 2rem;
+            gap: 1.5rem;
             list-style: none;
             align-items: center;
         }
@@ -145,7 +145,7 @@
         .nav-links a {
             color: var(--text-muted);
             text-decoration: none;
-            font-size: 0.95rem;
+            font-size: 0.85rem;
             font-weight: 600;
             letter-spacing: 1.5px;
             transition: var(--transition-smooth);
@@ -471,7 +471,6 @@
             left: 100%;
         }
 
-        /* ФОТО-БЛОК */
         .moment-photo {
             flex-shrink: 0;
             width: 140px;
@@ -490,16 +489,6 @@
             object-fit: cover;
             display: block;
             transition: var(--transition-smooth);
-        }
-
-        .moment-photo .photo-placeholder {
-            width: 100%;
-            height: 100%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 3.5rem;
-            background: linear-gradient(135deg, #1a0025, #2a0045);
         }
 
         .moment-card:hover .moment-photo {
@@ -673,7 +662,7 @@
             font-size: 1.1rem;
         }
 
-        /* ============ ПИСЬМО 3D С ФОТО ============ */
+        /* ============ ПИСЬМО 3D ============ */
         .letter-section {
             padding: 10rem 2rem;
             position: relative;
@@ -790,22 +779,287 @@
             display: block;
         }
 
-        .letter-photo .photo-placeholder {
-            width: 100%;
-            height: 250px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 5rem;
-            background: linear-gradient(135deg, #1a0025, #2a0045);
-        }
-
         .letter-signature-3d {
             margin-top: 2rem;
             text-align: right;
             color: var(--primary);
             font-family: 'Dancing Script', cursive;
             font-size: 2.5rem;
+        }
+
+        /* ============ ПАЛИТРА ЭМОЦИЙ (ИДЕЯ 8) ============ */
+        .palette-section {
+            padding: 10rem 2rem;
+            background: var(--glass-bg);
+            position: relative;
+        }
+
+        .palette-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 2rem;
+            max-width: 1100px;
+            margin: 0 auto;
+        }
+
+        .palette-item {
+            padding: 3rem 1.5rem;
+            border-radius: 30px;
+            text-align: center;
+            transition: var(--transition-bounce);
+            cursor: pointer;
+            border: 2px solid transparent;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .palette-item:hover {
+            transform: translateY(-15px) scale(1.03);
+            border-color: white;
+            box-shadow: var(--shadow-strong);
+        }
+
+        .palette-item .color-box {
+            width: 80px;
+            height: 80px;
+            border-radius: 50%;
+            margin: 0 auto 1.5rem;
+            border: 3px solid rgba(255,255,255,0.2);
+            transition: var(--transition-smooth);
+        }
+
+        .palette-item:hover .color-box {
+            transform: scale(1.15);
+            border-color: white;
+        }
+
+        .palette-item h4 {
+            font-size: 1.5rem;
+            color: white;
+            margin-bottom: 0.5rem;
+        }
+
+        .palette-item p {
+            color: var(--text-muted);
+            font-size: 0.95rem;
+            font-family: 'Montserrat', sans-serif;
+        }
+
+        .palette-item .emoji-big {
+            font-size: 3rem;
+            display: block;
+            margin-bottom: 0.5rem;
+        }
+
+        /* ============ СУНДУК СЮРПРИЗОВ (ИДЕЯ 10) ============ */
+        .chest-section {
+            padding: 10rem 2rem;
+            position: relative;
+        }
+
+        .chest-container {
+            max-width: 600px;
+            margin: 0 auto;
+            text-align: center;
+        }
+
+        .chest-box {
+            background: rgba(255, 255, 255, 0.02);
+            border-radius: 40px;
+            padding: 4rem;
+            border: 1px solid var(--glass-border);
+            backdrop-filter: blur(30px);
+            cursor: pointer;
+            transition: var(--transition-bounce);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .chest-box:hover {
+            border-color: var(--primary);
+            box-shadow: var(--shadow-strong);
+            transform: scale(1.02);
+        }
+
+        .chest-icon {
+            font-size: 8rem;
+            animation: chestFloat 2s ease-in-out infinite;
+            display: block;
+            transition: var(--transition-smooth);
+        }
+
+        .chest-box:hover .chest-icon {
+            animation: chestShake 0.8s ease-in-out;
+        }
+
+        @keyframes chestFloat {
+            0%, 100% { transform: translateY(0) rotate(-2deg); }
+            50% { transform: translateY(-15px) rotate(2deg); }
+        }
+
+        @keyframes chestShake {
+            0%, 100% { transform: rotate(0deg); }
+            25% { transform: rotate(-10deg); }
+            75% { transform: rotate(10deg); }
+        }
+
+        .chest-box h3 {
+            color: white;
+            font-size: 2.5rem;
+            margin: 1.5rem 0;
+        }
+
+        .chest-box p {
+            color: var(--text-muted);
+            font-size: 1.1rem;
+            font-family: 'Montserrat', sans-serif;
+        }
+
+        .chest-result {
+            margin-top: 2rem;
+            padding: 2rem;
+            background: rgba(255, 45, 85, 0.1);
+            border-radius: 25px;
+            border: 1px solid rgba(255, 45, 85, 0.3);
+            min-height: 100px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.3rem;
+            color: var(--text-light);
+            font-family: 'Montserrat', sans-serif;
+            transition: var(--transition-smooth);
+        }
+
+        .chest-result .big-emoji {
+            font-size: 3rem;
+            margin-right: 1rem;
+        }
+
+        /* ============ ГАЛАКТИКА ЛЮБВИ (ИДЕЯ 12) ============ */
+        .galaxy-section {
+            padding: 10rem 2rem;
+            background: var(--bg-deep);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .galaxy-bg {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            pointer-events: none;
+            z-index: 0;
+        }
+
+        .star {
+            position: absolute;
+            border-radius: 50%;
+            background: white;
+            animation: twinkle var(--duration) ease-in-out infinite;
+        }
+
+        @keyframes twinkle {
+            0%, 100% { opacity: 0.2; transform: scale(0.8); }
+            50% { opacity: 1; transform: scale(1.2); }
+        }
+
+        .galaxy-content {
+            position: relative;
+            z-index: 1;
+        }
+
+        .galaxy-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+            max-width: 1100px;
+            margin: 0 auto;
+        }
+
+        .galaxy-marker {
+            background: rgba(255, 255, 255, 0.02);
+            border-radius: 30px;
+            padding: 2.5rem 2rem;
+            border: 1px solid var(--glass-border);
+            backdrop-filter: blur(30px);
+            text-align: center;
+            transition: var(--transition-bounce);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .galaxy-marker::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            left: -50%;
+            width: 200%;
+            height: 200%;
+            background: radial-gradient(circle, rgba(255,45,85,0.1) 0%, transparent 70%);
+            animation: galaxyGlow 4s ease-in-out infinite;
+        }
+
+        @keyframes galaxyGlow {
+            0%, 100% { transform: translate(0, 0) scale(1); }
+            50% { transform: translate(20px, -20px) scale(1.2); }
+        }
+
+        .galaxy-marker:hover {
+            border-color: var(--primary);
+            transform: translateY(-10px) scale(1.03);
+            box-shadow: var(--shadow-strong);
+        }
+
+        .galaxy-marker .marker-icon {
+            font-size: 3.5rem;
+            display: block;
+            margin-bottom: 1rem;
+            position: relative;
+            z-index: 1;
+        }
+
+        .galaxy-marker .marker-date {
+            color: var(--primary);
+            font-size: 0.9rem;
+            font-family: 'Montserrat', sans-serif;
+            letter-spacing: 2px;
+            margin-bottom: 0.5rem;
+            position: relative;
+            z-index: 1;
+        }
+
+        .galaxy-marker h4 {
+            color: white;
+            font-size: 1.4rem;
+            margin-bottom: 0.5rem;
+            position: relative;
+            z-index: 1;
+        }
+
+        .galaxy-marker p {
+            color: var(--text-muted);
+            font-size: 0.95rem;
+            font-family: 'Montserrat', sans-serif;
+            position: relative;
+            z-index: 1;
+        }
+
+        .galaxy-connection {
+            text-align: center;
+            color: var(--primary);
+            font-size: 2rem;
+            padding: 1rem 0;
+            font-family: 'Montserrat', sans-serif;
+            letter-spacing: 5px;
+            animation: connectionPulse 2s ease-in-out infinite;
+        }
+
+        @keyframes connectionPulse {
+            0%, 100% { opacity: 0.5; transform: scale(1); }
+            50% { opacity: 1; transform: scale(1.1); }
         }
 
         /* ============ СТАТИСТИКА ============ */
@@ -950,6 +1204,7 @@
                 margin-top: 0.5rem;
                 border: 1px solid var(--glass-border);
                 backdrop-filter: blur(40px);
+                gap: 1rem;
             }
 
             .nav-links.active {
@@ -994,10 +1249,6 @@
                 border-radius: 20px;
             }
 
-            .moment-photo .photo-placeholder {
-                font-size: 4rem;
-            }
-
             .moment-date {
                 justify-content: center;
             }
@@ -1029,18 +1280,33 @@
                 font-size: 1rem;
             }
 
-            .letter-photo .photo-placeholder {
-                height: 180px;
-                font-size: 3.5rem;
-            }
-
             .stats-dashboard {
                 grid-template-columns: 1fr 1fr;
+            }
+
+            .palette-grid {
+                grid-template-columns: 1fr 1fr;
+            }
+
+            .galaxy-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .chest-box {
+                padding: 2rem;
+            }
+
+            .chest-icon {
+                font-size: 5rem;
             }
         }
 
         @media (max-width: 480px) {
             .stats-dashboard {
+                grid-template-columns: 1fr;
+            }
+
+            .palette-grid {
                 grid-template-columns: 1fr;
             }
         }
@@ -1060,6 +1326,9 @@
             <li><a href="#moments">Моменты</a></li>
             <li><a href="#timeline">История</a></li>
             <li><a href="#letter">Письмо</a></li>
+            <li><a href="#palette">Эмоции</a></li>
+            <li><a href="#chest">Сундук</a></li>
+            <li><a href="#galaxy">Галактика</a></li>
             <li><a href="#stats">Статистика</a></li>
         </ul>
         <div class="hamburger-menu" id="hamburger">
@@ -1095,7 +1364,7 @@
             </div>
         </section>
 
-        <!-- ====== МОМЕНТЫ (СПИСОК С ФОТО) ====== -->
+        <!-- ====== МОМЕНТЫ ====== -->
         <section class="moments-section" id="moments">
             <div class="section-header">
                 <div class="section-label">📸 Воспоминания</div>
@@ -1107,7 +1376,6 @@
             </div>
 
             <div class="moments-list">
-                <!-- ====== ФОТО 1 ====== -->
                 <div class="moment-card" onclick="showToast('✨ 2 июня 2026 — начало нашего общения!')">
                     <div class="moment-photo">
                         <img src="foto1.jpg" alt="Фото 1">
@@ -1120,7 +1388,6 @@
                     </div>
                 </div>
 
-                <!-- ====== ФОТО 2 ====== -->
                 <div class="moment-card" onclick="showToast('🌙 Бессонные ночи в голосовых')">
                     <div class="moment-photo">
                         <img src="foto2.jpg" alt="Фото 2">
@@ -1133,7 +1400,6 @@
                     </div>
                 </div>
 
-                <!-- ====== ФОТО 3 ====== -->
                 <div class="moment-card" onclick="showToast('🎥 Наш первый совместный фильм')">
                     <div class="moment-photo">
                         <img src="foto3.jpg" alt="Фото 3">
@@ -1146,7 +1412,6 @@
                     </div>
                 </div>
 
-                <!-- ====== ФОТО 4 ====== -->
                 <div class="moment-card" onclick="showToast('📸 Твой новый снимок!')">
                     <div class="moment-photo">
                         <img src="foto4.jpg" alt="Фото 4">
@@ -1159,7 +1424,6 @@
                     </div>
                 </div>
 
-                <!-- ====== ФОТО 5 ====== -->
                 <div class="moment-card" onclick="showToast('💕 31 июля 2026 — ровно 2 месяца!')">
                     <div class="moment-photo">
                         <img src="foto5.jpg" alt="Фото 5">
@@ -1174,7 +1438,7 @@
             </div>
         </section>
 
-        <!-- ТАЙМЛАЙН -->
+        <!-- ====== ТАЙМЛАЙН ====== -->
         <section class="timeline-section" id="timeline">
             <div class="section-header">
                 <div class="section-label">Наш путь</div>
@@ -1226,7 +1490,7 @@
             </div>
         </section>
 
-        <!-- ПИСЬМО 3D С ФОТО -->
+        <!-- ====== ПИСЬМО 3D ====== -->
         <section class="letter-section" id="letter">
             <div class="section-header">
                 <div class="section-label">Послание</div>
@@ -1244,7 +1508,6 @@
                         <div class="letter-content-3d">
                             <h2>Моя Любимая,</h2>
                             
-                            <!-- ====== ФОТО 6 (В ПИСЬМЕ) ====== -->
                             <div class="letter-photo">
                                 <img src="foto6.jpg" alt="Фото 6">
                             </div>
@@ -1277,7 +1540,128 @@
             </div>
         </section>
 
-        <!-- СТАТИСТИКА -->
+        <!-- ====== ПАЛИТРА ЭМОЦИЙ (ИДЕЯ 8) ====== -->
+        <section class="palette-section" id="palette">
+            <div class="section-header">
+                <div class="section-label">🌈 Наши чувства</div>
+                <h2 class="section-title">Палитра Эмоций</h2>
+                <div class="section-line"></div>
+            </div>
+            <div class="palette-grid">
+                <div class="palette-item" onclick="showToast('❤️ Страсть — это наш огонь!')">
+                    <span class="emoji-big">❤️</span>
+                    <div class="color-box" style="background: linear-gradient(135deg, #ff1744, #ff6b8a);"></div>
+                    <h4>Страсть</h4>
+                    <p>Огонь, который горит между нами. Ты зажигаешь моё сердце.</p>
+                </div>
+
+                <div class="palette-item" onclick="showToast('💗 Нежность — твоя суперсила 💗')">
+                    <span class="emoji-big">💗</span>
+                    <div class="color-box" style="background: linear-gradient(135deg, #ff80ab, #f48fb1);"></div>
+                    <h4>Нежность</h4>
+                    <p>Твоя мягкость и забота делают мир теплее и добрее.</p>
+                </div>
+
+                <div class="palette-item" onclick="showToast('💛 Радость — ты моя улыбка!')">
+                    <span class="emoji-big">💛</span>
+                    <div class="color-box" style="background: linear-gradient(135deg, #ffd740, #ffab00);"></div>
+                    <h4>Радость</h4>
+                    <p>Твоя улыбка — самое яркое солнце в моей жизни.</p>
+                </div>
+
+                <div class="palette-item" onclick="showToast('💙 Уют — как дома с тобой')">
+                    <span class="emoji-big">💙</span>
+                    <div class="color-box" style="background: linear-gradient(135deg, #4fc3f7, #0288d1);"></div>
+                    <h4>Уют</h4>
+                    <p>Рядом с тобой даже на расстоянии чувствую себя как дома.</p>
+                </div>
+
+                <div class="palette-item" onclick="showToast('💜 Магия — это ты ✨')">
+                    <span class="emoji-big">💜</span>
+                    <div class="color-box" style="background: linear-gradient(135deg, #ce93d8, #7b1fa2);"></div>
+                    <h4>Магия</h4>
+                    <p>Наша связь — это волшебство, которое не объяснить словами.</p>
+                </div>
+
+                <div class="palette-item" onclick="showToast('💚 Гармония — мы идеально подходим друг другу')">
+                    <span class="emoji-big">💚</span>
+                    <div class="color-box" style="background: linear-gradient(135deg, #81c784, #2e7d32);"></div>
+                    <h4>Гармония</h4>
+                    <p>Мы — две половинки, которые идеально дополняют друг друга.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- ====== СУНДУК СЮРПРИЗОВ (ИДЕЯ 10) ====== -->
+        <section class="chest-section" id="chest">
+            <div class="section-header">
+                <div class="section-label">🎁 Сюрпризы</div>
+                <h2 class="section-title">Сундук Чудес</h2>
+                <div class="section-line"></div>
+            </div>
+            <div class="chest-container">
+                <div class="chest-box" onclick="openChest()">
+                    <span class="chest-icon" id="chestIcon">📦</span>
+                    <h3>Открой сундук</h3>
+                    <p>Нажми, чтобы получить порцию любви и нежности ❤️</p>
+                    <div class="chest-result" id="chestResult">
+                        <span class="big-emoji">✨</span>
+                        <span>Нажми на сундук!</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ====== ГАЛАКТИКА ЛЮБВИ (ИДЕЯ 12) ====== -->
+        <section class="galaxy-section" id="galaxy">
+            <div class="galaxy-bg" id="galaxyBg"></div>
+            <div class="galaxy-content">
+                <div class="section-header">
+                    <div class="section-label">🌌 Наша вселенная</div>
+                    <h2 class="section-title">Галактика Любви</h2>
+                    <div class="section-line"></div>
+                    <p style="color: var(--text-muted); font-size: 1.1rem; max-width: 600px; margin: 0 auto;">
+                        Каждая звезда — это наш момент. Мы создаём свою вселенную ❤️
+                    </p>
+                </div>
+
+                <div class="galaxy-connection">
+                    💫 ——— ❤️ ——— 💫
+                </div>
+
+                <div class="galaxy-grid">
+                    <div class="galaxy-marker" onclick="showToast('✨ 2 июня 2026 — наша звезда зажглась!')">
+                        <span class="marker-icon">🌟</span>
+                        <div class="marker-date">2 ИЮНЯ 2026</div>
+                        <h4>Первая звезда</h4>
+                        <p>В этот день мы встретились в бескрайнем космосе интернета.</p>
+                    </div>
+
+                    <div class="galaxy-marker" onclick="showToast('💕 Июль 2026 — наша любовь растёт!')">
+                        <span class="marker-icon">💫</span>
+                        <div class="marker-date">ИЮЛЬ 2026</div>
+                        <h4>Звезда любви</h4>
+                        <p>Когда ты сказала "Люблю", в нашей галактике зажглась новая звезда.</p>
+                    </div>
+
+                    <div class="galaxy-marker" onclick="showToast('🌟 Сегодня — наша галактика сияет ярко!')">
+                        <span class="marker-icon">🌠</span>
+                        <div class="marker-date">СЕГОДНЯ</div>
+                        <h4>Вечная галактика</h4>
+                        <p>Наша любовь — это бесконечная вселенная, полная чудес.</p>
+                    </div>
+
+                    <div class="galaxy-marker" onclick="showToast('🔮 Будущее — нас ждёт целая вселенная!')">
+                        <span class="marker-icon">🌌</span>
+                        <div class="marker-date">БУДУЩЕЕ</div>
+                        <h4>Новые звёзды</h4>
+                        <p>Впереди миллионы моментов, которые станут нашими звёздами.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ====== СТАТИСТИКА ====== -->
         <section class="stats-section" id="stats">
             <div class="section-header">
                 <div class="section-label">Цифры</div>
@@ -1351,7 +1735,7 @@
         });
 
         function updateActiveSection() {
-            const sections = ['home', 'moments', 'timeline', 'letter', 'stats'];
+            const sections = ['home', 'moments', 'timeline', 'letter', 'palette', 'chest', 'galaxy', 'stats'];
             const navLinksAll = document.querySelectorAll('.nav-links a');
             
             sections.forEach((section, index) => {
@@ -1382,6 +1766,102 @@
             }
         }
 
+        // ============ СУНДУК ============
+        const chestSurprises = [
+            { emoji: '💖', text: 'Ты — самое прекрасное, что случилось в моей жизни!' },
+            { emoji: '✨', text: 'Твоя улыбка согревает меня даже на расстоянии!' },
+            { emoji: '🌟', text: 'Ты — моя звёздочка, которая освещает мой путь!' },
+            { emoji: '💝', text: 'Я люблю тебя больше, чем все звёзды на небе!' },
+            { emoji: '🎀', text: 'Ты — подарок судьбы, о котором я всегда мечтал!' },
+            { emoji: '🌈', text: 'С тобой каждый день — как радуга после дождя!' },
+            { emoji: '🦋', text: 'Ты — моя бабочка, которая приносит счастье!' },
+            { emoji: '💎', text: 'Ты — самое ценное сокровище в моей жизни!' },
+            { emoji: '🌹', text: 'Твоя красота затмевает все розы мира!' },
+            { emoji: '🌙', text: 'Даже луна завидует твоему сиянию!' }
+        ];
+
+        let chestOpened = false;
+
+        function openChest() {
+            const icon = document.getElementById('chestIcon');
+            const result = document.getElementById('chestResult');
+            
+            if (!chestOpened) {
+                icon.textContent = '✨';
+                icon.style.animation = 'chestShake 0.5s ease-in-out';
+                setTimeout(() => {
+                    icon.style.animation = 'chestFloat 2s ease-in-out infinite';
+                }, 500);
+                chestOpened = true;
+                showToast('🎉 Сундук открыт! Смотри сюрприз!');
+            }
+
+            const surprise = chestSurprises[Math.floor(Math.random() * chestSurprises.length)];
+            result.innerHTML = `<span class="big-emoji">${surprise.emoji}</span><span>${surprise.text}</span>`;
+            result.style.background = 'rgba(255,45,85,0.2)';
+            result.style.border = '2px solid var(--primary)';
+            
+            // Конфетти
+            createConfetti();
+        }
+
+        function createConfetti() {
+            const colors = ['#ff2d55', '#ff6b8a', '#ffd700', '#ff69b4', '#ff8fa3', '#ffffff'];
+            const chest = document.querySelector('.chest-box');
+            const rect = chest.getBoundingClientRect();
+            
+            for (let i = 0; i < 30; i++) {
+                setTimeout(() => {
+                    const confetti = document.createElement('div');
+                    const size = Math.random() * 12 + 6;
+                    const angle = Math.random() * Math.PI * 2;
+                    const velocity = Math.random() * 150 + 50;
+                    
+                    confetti.style.cssText = `
+                        position: fixed;
+                        left: ${rect.left + rect.width/2}px;
+                        top: ${rect.top + rect.height/2}px;
+                        width: ${size}px;
+                        height: ${size * (Math.random() * 0.6 + 0.4)}px;
+                        background: ${colors[Math.floor(Math.random() * colors.length)]};
+                        border-radius: ${Math.random() > 0.5 ? '50%' : '3px'};
+                        pointer-events: none;
+                        z-index: 10001;
+                        transition: all ${Math.random() * 1.5 + 1}s cubic-bezier(0.4, 0, 0.2, 1);
+                    `;
+                    
+                    document.body.appendChild(confetti);
+                    
+                    requestAnimationFrame(() => {
+                        confetti.style.transform = `translate(${Math.cos(angle) * velocity}px, ${Math.sin(angle) * velocity - 100}px) rotate(${Math.random() * 720}deg)`;
+                        confetti.style.opacity = '0';
+                    });
+                    
+                    setTimeout(() => confetti.remove(), 2500);
+                }, i * 30);
+            }
+        }
+
+        // ============ ГАЛАКТИКА ЗВЁЗД ============
+        function createGalaxyStars() {
+            const container = document.getElementById('galaxyBg');
+            const starCount = 80;
+            
+            for (let i = 0; i < starCount; i++) {
+                const star = document.createElement('div');
+                star.className = 'star';
+                const size = Math.random() * 4 + 1;
+                star.style.width = size + 'px';
+                star.style.height = size + 'px';
+                star.style.left = Math.random() * 100 + '%';
+                star.style.top = Math.random() * 100 + '%';
+                star.style.setProperty('--duration', Math.random() * 3 + 2 + 's');
+                star.style.animationDelay = Math.random() * 3 + 's';
+                star.style.boxShadow = `0 0 ${size * 3}px rgba(255, 255, 255, 0.5)`;
+                container.appendChild(star);
+            }
+        }
+
         // ============ TOAST ============
         function showToast(message) {
             const existingToast = document.querySelector('.toast-notification');
@@ -1395,7 +1875,7 @@
             setTimeout(() => toast.remove(), 3500);
         }
 
-        // ============ СЧЕТЧИКИ (2026 год) ============
+        // ============ СЧЕТЧИКИ ============
         const startDate = new Date('2026-06-02');
         
         function updateCounters() {
@@ -1405,7 +1885,6 @@
             
             document.getElementById('daysCount').textContent = diffDays;
             
-            // Имитация количества сообщений
             const messages = Math.floor(diffDays * 147 + Math.random() * 50);
             document.getElementById('messagesCount').textContent = messages.toLocaleString();
         }
@@ -1430,6 +1909,7 @@
             if (secretKeys.includes('loveyou')) {
                 secretKeys = '';
                 showToast('💘 Я ТЕБЯ ЛЮБЛЮ!');
+                createConfetti();
             }
             if (secretKeys.length > 20) secretKeys = secretKeys.slice(-20);
         });
@@ -1438,6 +1918,7 @@
         window.addEventListener('load', () => {
             updateCounters();
             revealTimeline();
+            createGalaxyStars();
             setInterval(updateCounters, 60000);
         });
 
